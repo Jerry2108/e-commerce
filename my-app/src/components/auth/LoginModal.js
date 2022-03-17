@@ -105,7 +105,7 @@ class LoginModal extends Component {
           </Form>
           <img src = "./assets/images/authImage.jpg" />
         </div>
-        {this.props.isAuthenticated ? <Navigate to="/home" /> : null}
+        {this.props.isAuthenticated ? <Navigate to="/" /> : null}
       </div>
     );
   }

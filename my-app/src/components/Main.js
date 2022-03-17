@@ -12,7 +12,7 @@ class Main extends Component {
   render() {
     return (
       <Routes>
-          <Route exact path="/home" element = {<Home />}>
+          <Route exact path="/" element = {<Home />}>
           </Route>
           <Route exact path="/cart" element = {<Cart />}>
           </Route>

@@ -79,10 +79,10 @@ class AppNavbar extends Component {
     const userLinks = (
       <div class="items">
         <NavItem>
-          <Link to="/home">Home</Link>
+          <Link to="/">Home</Link>
         </NavItem>
         <NavItem onClick = {this.userLogout.bind(this)}>
-          <Link to="/home">Logout</Link>
+          <Link to="/">Logout</Link>
         </NavItem>
         <NavItem>
           <FontAwesomeIcon
@@ -100,7 +100,7 @@ class AppNavbar extends Component {
     const guestLinks = (
       <div class="items">
         <NavItem>
-          <Link to="/home">Home</Link>
+          <Link to="">Home</Link>
         </NavItem>
         <NavItem>
           <Link to="/about">About</Link>
