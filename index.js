@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-const port = process.env.PORT | 4000;
+const port = process.env.PORT || 4000;
 
 //connect to mongoDB Atlast db
 const user = process.env.USER;

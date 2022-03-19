@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client-install": "npm install --prefix client",
-    "server": "nodemon index.js",
+    "client-install": "npm install --prefix my-app",
+    "build": "npm run build --prefix my-app",
+    "server": "node index.js",
     "my-app": "npm start --prefix my-app",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run my-app\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app"
+    "heroku-postbuild": "npm run client-install && npm run build"
   },
   "author": "",
   "license": "ISC",
