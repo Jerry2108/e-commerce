@@ -11,9 +11,8 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
-
 const app = express();
-
+const __dirname = path.resolve();
 dotenv.config();
 
 //Middleware
@@ -29,10 +28,12 @@ app.use("/api", itemRouter);
 app.use("/api", cartRouter);
 app.use("/api", orderRouter);
 
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("my-app/build"));
+  app.use(express.static(path.join(__dirname, "my-app", "build")));
+
   app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "my-app", "build", "index.html"));
+    res.sendFile(path.join(__dirname, "my-app", "build", "index.html"));
   });
 }
 
