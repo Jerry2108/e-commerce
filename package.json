@@ -46,5 +46,8 @@
   },
   "browser": {
     "fs": true
+  },
+  "engines":{
+    "node": "16.13.0"
   }
 }
