@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+#build
+/build
+/my-app/build 
 
 # misc
 .DS_Store
