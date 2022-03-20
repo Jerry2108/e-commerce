@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    
     "server": "node index.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run my-app\""
   },
@@ -35,16 +34,7 @@
     "validator": "^13.7.0"
   },
   "type": "module",
-  "devDependencies": {
-    "@babel/cli": "^7.17.6",
-    "@babel/core": "^7.17.5",
-    "@babel/plugin-transform-modules-commonjs": "^7.16.8",
-    "nodemon": "^2.0.15"
-  },
-  "browser": {
-    "fs": true
-  },
-  "engines":{
+  "engines": {
     "node": "16.13.0",
     "npm": "8.3.0"
   }
