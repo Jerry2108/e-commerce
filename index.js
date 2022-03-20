@@ -30,9 +30,10 @@ app.use("/api", orderRouter);
 
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname,"my-app","build")));
-  app.get("*",(req,resp)=>{
-      resp.sendFile(path.join(__dirname,"my-app","build","index.html"));
+  //app.use(express.static(path.join(__dirname,"my-app","build")));
+  app.get("*",(req,res)=>{
+      //resp.sendFile(path.join(__dirname,"my-app","build","index.html"));
+    res.send("Hello World");
   })
 }
 
@@ -50,3 +51,6 @@ mongoose
     console.log(`app is running on ${port}`);
   })
   .catch((error) => console.log(error));
+
+  //"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app
+
