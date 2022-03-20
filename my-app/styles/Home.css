@@ -23,29 +23,35 @@
   font-family: Poppin;
 }
 
-.products-info {
-  position: relative;
-  margin-top: 50px;
+* hr {
+  border-top: 3px solid #3bedb7;
+}
+
+#products-info {
+  position: absolute;
+  left: 5%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.products-info .products-display {
+#products-info .products-display {
   position: relative;
-  top: 100px;
+  top: 50x;
 }
 
-.products-info .filter-section {
-  border-bottom: 2px solid #0000ff;
+#products-info .filter-section {
+  font-size: larger;
 }
 
-.products-info .filter-section h2 {
+#products-info .filter-section span {
+  font-size: 2rem;
+}
+
+#products-info .filter-section .btn-group-lg {
   display: inline;
-}
-
-.products-info .filter-section .btn-group-lg dropdown {
-  float: right;
+  margin-left: 2rem;
+  background-color: #0000ff;
 }
 
 .navbar {
@@ -101,7 +107,6 @@ a.nav-link {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: 600px;
-  border-bottom: 2px solid #0000ff;
 }
 
 .landing .image {
@@ -144,21 +149,14 @@ a.nav-link {
     margin-top: 400px;
 }*/
 .col-md-3 .card {
-  border-style: solid;
-  border-radius: 25px;
-  border-width: 3px;
-  border-color: #FD673A;
   overflow: hidden;
-  background-color: #3bedb7;
 }
 
 .col-md-3 .card .card-img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   border-bottom: 3px solid #FD673A;
   border-radius: 25px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .col-md-3 .card .card-body {

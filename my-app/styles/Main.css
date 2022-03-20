@@ -15928,17 +15928,35 @@ readers do not read off random characters that represent icons */
   font-family: Poppin;
 }
 
-.products-info {
-  position: relative;
-  margin-top: 50px;
+* hr {
+  border-top: 3px solid #3bedb7;
+}
+
+#products-info {
+  position: absolute;
+  left: 5%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.products-display {
+#products-info .products-display {
   position: relative;
-  top: 300px;
+  top: 50x;
+}
+
+#products-info .filter-section {
+  font-size: larger;
+}
+
+#products-info .filter-section span {
+  font-size: 2rem;
+}
+
+#products-info .filter-section .btn-group-lg {
+  display: inline;
+  margin-left: 2rem;
+  background-color: #0000ff;
 }
 
 .navbar {
@@ -15994,7 +16012,6 @@ a.nav-link {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: 600px;
-  border-bottom: 2px solid #0000ff;
 }
 
 .landing .image {
@@ -16037,21 +16054,14 @@ a.nav-link {
     margin-top: 400px;
 }*/
 .col-md-3 .card {
-  border-style: solid;
-  border-radius: 25px;
-  border-width: 3px;
-  border-color: #FD673A;
   overflow: hidden;
-  background-color: #3bedb7;
 }
 
 .col-md-3 .card .card-img {
   width: 100%;
-  height: 400px;
+  height: 300px;
   border-bottom: 3px solid #FD673A;
   border-radius: 25px;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 
 .col-md-3 .card .card-body {
@@ -16108,9 +16118,179 @@ a.nav-link {
 }*/
 .authPage {
   position: absolute;
-  top: 30%;
+  top: 10%;
   left: 20%;
-  height: 50%;
+  height: 60%;
   width: 70%;
+  background-color: #7FFFD4;
+  border-radius: 2%;
+}
+
+.authPage h1 {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.authPage h5 {
+  display: inline;
+  padding-left: 5%;
+}
+
+.authPage a {
+  margin-left: 1rem;
+  font-size: larger;
+}
+
+.authPage .authInfo {
+  margin-top: 2%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.authPage .authInfo form {
+  width: 50%;
+}
+
+.authPage .authInfo img {
+  display: inline;
+  height: 200px;
+  width: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#cart-summary {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+}
+
+#cart-summary .cartSubtotal {
+  max-height: 100%;
+}
+
+#cart-summary .purchase-items {
+  max-height: 100%;
+}
+
+#cart-summary .purchase-items .purchase-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 5rem;
+  border-bottom: 2px solid turquoise;
+  width: 80%;
+  height: 400px;
+}
+
+#cart-summary .purchase-items .purchase-item .image-title {
+  width: 50%;
+  height: 100%;
+}
+
+#cart-summary .purchase-items .purchase-item .image-title img {
+  height: 80%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#cart-summary .purchase-items .purchase-item .price-quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  gap: 10px;
+}
+
+#cart-summary .purchase-items .purchase-item .price-quantity div {
+  height: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  position: relative;
+  left: 200px;
+  font-size: 1.5rem;
+}
+
+table .cart-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+table th {
+  text-align: left;
+  padding: 5px;
+  color: white;
+  background: tomato;
+  font-weight: normal;
+}
+
+table tr td {
+  padding: 10px 5px;
+  font-size: 1.5rem;
+}
+
+table tr td input {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin-left: 9px;
+  margin-right: 9px;
+}
+
+table tr td .cart-info img {
+  height: 200px;
+  width: 200px;
+  margin-right: 5px;
+}
+
+table tr td .cart-info div span {
+  color: #ff523b;
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.total-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 40%;
+  position: relative;
+  left: 600px;
+}
+
+.total-price table {
+  border-top: 2px solid #ff523b;
+}
+
+.total-price table tr {
+  padding-left: 20px;
 }
 /*# sourceMappingURL=Main.css.map */
