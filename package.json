@@ -6,9 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "client-install": "npm install --prefix my-app",
+    
     "server": "node index.js",
-    "my-app": "npm start --prefix my-app",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run my-app\""
   },
   "author": "",
