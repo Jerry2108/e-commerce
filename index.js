@@ -12,7 +12,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
 const app = express();
-const __dirname = path.resolve();
+//const __dirname = path.resolve();
 dotenv.config();
 
 //Middleware
@@ -28,13 +28,12 @@ app.use("/api", itemRouter);
 app.use("/api", cartRouter);
 app.use("/api", orderRouter);
 
-
 if (process.env.NODE_ENV === "production") {
   //app.use(express.static(path.join(__dirname,"my-app","build")));
-  app.get("*",(req,res)=>{
-      //resp.sendFile(path.join(__dirname,"my-app","build","index.html"));
+  app.get("*", (req, res) => {
+    //resp.sendFile(path.join(__dirname,"my-app","build","index.html"));
     res.send("Hello World");
-  })
+  });
 }
 
 const port = process.env.PORT || 4000;
@@ -42,7 +41,6 @@ const port = process.env.PORT || 4000;
 //connect to mongoDB Atlast db
 const user = process.env.USER;
 const password = process.env.PASSWORD;
-const db = process.env.DB_NAME;
 const dbURL = `mongodb+srv://${user}:${password}@cluster0.vcuxt.mongodb.net/ecommerce?retryWrites=true&w=majority`;
 mongoose
   .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -52,5 +50,4 @@ mongoose
   })
   .catch((error) => console.log(error));
 
-  //"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app
-
+//"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app
