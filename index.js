@@ -12,7 +12,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import morgan from "morgan";
 const app = express();
-//const __dirname = path.resolve();
+const __dirname = path.resolve();
 dotenv.config();
 
 //Middleware
@@ -29,10 +29,10 @@ app.use("/api", cartRouter);
 app.use("/api", orderRouter);
 
 if (process.env.NODE_ENV === "production") {
-  //app.use(express.static(path.join(__dirname,"my-app","build")));
+app.use(express.static(path.join(__dirname,"my-app","build")));
   app.get("*", (req, res) => {
-    //resp.sendFile(path.join(__dirname,"my-app","build","index.html"));
-    res.send("Hello World");
+    resp.sendFile(path.join(__dirname,"my-app","build","index.html"));
+    //res.send("Hello World");
   });
 }
 
@@ -50,4 +50,3 @@ mongoose
   })
   .catch((error) => console.log(error));
 
-//"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app
