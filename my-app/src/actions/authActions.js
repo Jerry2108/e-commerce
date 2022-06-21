@@ -11,34 +11,7 @@ import {
 import { returnErrors } from "./errorActions.js";
 import axios from "axios";
 
-//When an Axios API is called by a client to the server, the client need to provide a token called API key.
-//In this application, a token is sent as a request header.
-/*export const loadUser = () => (dispatch, getState) => {
-  //first set the type of action to be USER_LOADING before getting data from axios successfully.
-  dispatch({ type: USER_LOADING });
-    let token = localStorage.getItem('access_token');
-    let instance = axios.create({
-        baseURL: "http://localhost/4000",
-        headers: {
-            'Content-Type': 'application/Json',
-            'Authorization': `Bearer ${token}`,
-            'Access-Control-Allow-Origin': '*'
 
-        }
-    });
-    
-
-
-  //fetch data from an API using axios
-  instance
-    .get("/api/user")
-    .then((res) => dispatch({ type: USER_LOADED, payload: res.data }))
-    .catch((errors) => {
-      console.log(errors);
-      dispatch(returnErrors(errors.response.data, errors.response.status));
-      dispatch({ type: AUTH_ERROR });
-    });
-};*/
 
 export const loadUser = () => (dispatch, getState) => {
   // User loading
