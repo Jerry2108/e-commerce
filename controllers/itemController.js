@@ -1,8 +1,10 @@
 import Item from '../models/Item.js';
-import multer from 'multer';
+
 export var getItems = async(req,res)=>{
     try{
         let allItems = await Item.find().sort({date:-1});
+        //get image of al items
+        
         return res.json(allItems);
     }
     catch(errors){
@@ -18,7 +20,7 @@ export var postItemImage =  async(req, res)=>{
         const imageName = req.file.filename;
         return res.json(imageName);
     }
-    catch{
+    catch(errors){
         console.log(errors);
     }
 }
@@ -26,7 +28,7 @@ export var postItemImage =  async(req, res)=>{
 export var postItem = async(req, res)=>{
     try{
        
-
+    console.log(req.body);
     let newItem = await Item(req.body);
     let savedItem = await newItem.save();
         return res.json(savedItem);

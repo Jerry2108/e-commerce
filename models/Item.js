@@ -8,14 +8,6 @@ const ItemSchema = new schema({
         type: String,
         required: true
     },
-    description:{
-        type:String,
-        required: true
-    },
-    category:{
-        type:String,
-        required:true
-    },
     price:{
         type:Number,
         required:true
@@ -23,7 +15,8 @@ const ItemSchema = new schema({
     date_added:{
         type:Date,
         default:Date.now
-    }
+    },
+    image: String
 });
 
 //create item model

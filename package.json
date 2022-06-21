@@ -6,9 +6,11 @@
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node index.js",
-    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run my-app\"",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix my-app",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix my-app && npm run build --prefix my-app"
+   
   },
   "author": "",
   "license": "ISC",
@@ -37,3 +39,4 @@
   },
   "type": "module"
 }
+

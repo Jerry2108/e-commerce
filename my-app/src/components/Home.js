@@ -168,7 +168,7 @@ class Home extends Component {
                 {items.map((item) => (
                   <Col md={3}>
                     <Card className="mb-4 h-100">
-                      <CardImg src={"./uploads/" + item.image} />
+                      <CardImg src = {"../uploads/" + item.image}/>
                       <CardBody>
                         <CardTitle tag="h5">{item.title}</CardTitle>
                         <div className="card-feature">

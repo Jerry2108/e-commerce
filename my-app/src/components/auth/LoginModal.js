@@ -76,7 +76,7 @@ class LoginModal extends Component {
       <div className="authPage">
          <h1>LOGIN</h1>
          <h5>Don't have an account</h5>
-         <Link to = "/register">Sign up here</Link>
+         <Link to = "/signUp">Sign up here</Link>
         <div className="authInfo">
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
@@ -96,7 +96,7 @@ class LoginModal extends Component {
                 type="password"
                 name="password"
                 placeholder="Enter your password"
-                value={this.state.name}
+                value={this.state.password}
               />
             </FormGroup>
             <Button color="dark" style={{ marginTop: "1rem", width: "200px" }}>

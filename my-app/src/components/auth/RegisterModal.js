@@ -38,7 +38,7 @@ class RegisterModal extends Component {
   static propTypes = {
     isAuthenticated: PropTypes.bool,
     error: PropTypes.object.isRequired,
-    login: PropTypes.func.isRequired,
+    register: PropTypes.func.isRequired,
     clearErrors: PropTypes.func.isRequired,
   };
   //this method gets called by React automatically, after each update(setState is called in either toggle/onChange)
@@ -61,7 +61,7 @@ class RegisterModal extends Component {
       [event.target.name]: event.target.value,
     });
 
-    //console.log(this.state);
+    console.log(this.state);
   }
 
   //call Axios request for login.
@@ -70,6 +70,7 @@ class RegisterModal extends Component {
     event.preventDefault();
     const { password, email, name } = this.state;
     const user = { password, email, name };
+    console.log(user)
     this.props.register(user);
   }
   render() {

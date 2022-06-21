@@ -88,7 +88,7 @@ class Cart extends Component {
                 <tr>
                   <td>
                     <div class="cart-info">
-                      <img src={"./uploads/" + item.picture} />
+                      <img src={"../uploads/" + item.image}/>
                       <div>
                         <p>{item.name}</p>
                         <small>Price: ${item.price}</small>

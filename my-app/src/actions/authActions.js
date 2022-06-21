@@ -44,7 +44,7 @@ export const loadUser = () => (dispatch, getState) => {
   // User loading
   dispatch({ type: USER_LOADING });
 
-  axios.get("/api/user", tokenConfig(getState))
+  axios.get("/user", tokenConfig(getState))
       .then(res => {
         //console.log(res.data);
         dispatch({
@@ -93,17 +93,13 @@ export const register =
     const config = {
       headers: {
         "Content-type": "application/json",
-      },
-      proxy:{
-        "host": "localhost",
-        "port": 4000
       }
     };
     //convert object into json.
     const registeredInformation = JSON.stringify({ name, email, password });
-
+    console.log(registeredInformation)
     axios
-      .post("/api/signUp", registeredInformation, config)
+      .post("/signUp", registeredInformation, config)
       .then((res) => dispatch({ type: REGISTER_SUCCESS, payload: res.data }))
       .catch((errors) => {
         dispatch(
@@ -132,7 +128,7 @@ export const login =
     let registeredInformation = JSON.stringify({ email, password });
     
     axios
-      .post("/api/login", registeredInformation, config)
+      .post("/login", registeredInformation, config)
       .then((res) => {
         dispatch({ type: LOGIN_SUCCESS, payload: res.data })})
       .catch((errors) => {

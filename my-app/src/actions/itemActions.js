@@ -11,7 +11,7 @@ import { returnErrors } from "./errorActions";
 export const getItems = () => (dispatch) => {
   dispatch(setItemsLoading());
   axios
-    .get("/api/items")
+    .get("/items")
     .then((res) => {
       console.log(res.data);
       dispatch({
@@ -31,18 +31,17 @@ export const postImage = (image) => async (dispatch) => {
       "Content-Type": "multipart/form-data",
     },
   };
-
   //post image first
   try {
-    let post = await axios.post("/api/item/image", image, config);
+    let post = await axios.post("/item/image", image, config);
   } catch (err) {
     dispatch(returnErrors(err.response.data, err.response.status));
   }
-};
+}
 export const addItem = (item) => (dispatch) => {
   //post input later
   axios
-    .post("/api/item", item)
+    .post("/item", item)
     .then((res) =>
       dispatch({
         type: ADD_ITEM,
@@ -56,7 +55,7 @@ export const addItem = (item) => (dispatch) => {
 
 export const deleteItem = (id) => (dispatch) => {
   axios
-    .delete(`/api/items/${id}`)
+    .delete(`/items/${id}`)
     .then((res) =>
       dispatch({
         type: DELETE_ITEM,
@@ -70,7 +69,7 @@ export const deleteItem = (id) => (dispatch) => {
 
 export const updateItem = (id, item) => (dispatch) => {
   axios
-    .put(`/api/items/${id}`, item)
+    .put(`/items/${id}`, item)
     .then((res) =>
       dispatch({
         type: UPDATE_ITEM,

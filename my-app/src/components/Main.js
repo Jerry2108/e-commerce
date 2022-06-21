@@ -21,7 +21,7 @@ class Main extends Component {
           <Route exact path="/addItem" element = {<AddItem />}> 
           </Route>
           <Route exact path="/login" element = {<LoginModal />}></Route>
-          <Route exact path = "/register" element = {<Register />}></Route>
+          <Route exact path = "/signUp" element = {<Register />}></Route>
           <Route exact path = "/logout" element = {<LogoutModal />}></Route>
         </Routes>
     );

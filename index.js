@@ -23,15 +23,15 @@ app.use("/uploads", express.static("uploads"));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan("tiny"));
-app.use("/api", authRouter);
-app.use("/api", itemRouter);
-app.use("/api", cartRouter);
-app.use("/api", orderRouter);
+app.use(authRouter);
+app.use(itemRouter);
+app.use(cartRouter);
+app.use(orderRouter);
 
 if (process.env.NODE_ENV === "production") {
 app.use(express.static(path.join(__dirname,"my-app","build")));
   app.get("*", (req, res) => {
-    resp.sendFile(path.join(__dirname,"my-app","build","index.html"));
+    res.sendFile(path.join(__dirname,"my-app","build","index.html"));
     //res.send("Hello World");
   });
 }
@@ -42,6 +42,7 @@ const port = process.env.PORT || 4000;
 const user = process.env.USER;
 const password = process.env.PASSWORD;
 const dbURL = `mongodb+srv://${user}:${password}@cluster0.vcuxt.mongodb.net/ecommerce?retryWrites=true&w=majority`;
+console.log(user);
 mongoose
   .connect(dbURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((result) => {

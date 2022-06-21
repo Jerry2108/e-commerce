@@ -46,6 +46,7 @@ export const signUp = (req,res) =>{
             if (errors){
                 throw errors;
             }
+            console.log(savedUser.name);
             return res.json({token, user: {
                 id: savedUser._id,
                 name: savedUser.name,
@@ -59,6 +60,7 @@ export const signUp = (req,res) =>{
 //matchPassword
 const matchPassword = async (password, user)=>{
     try{
+
     return await bcrypt.compare(password, user.password);
     }
     catch(errors){
@@ -73,9 +75,13 @@ export const logIn = (req,res)=>{
     }
 
     User.findOne({email}).then(user => {
+        //This means there are no users found based on the email
+        if (user === null){
+            return res.status(400).json({msg: "Invalid email or password."})
+        }
         matchPassword(password, user).then(isMatch => {
         if (!isMatch ){
-            return res.status(400).json({msg: "Incorrect password"})
+            return res.status(400).json({msg: "Invalid email or password"})
         }
         jsonwebtoken.sign({id:user._id}, process.env.JWT_SECRET, {expiresIn: 3600}, (errors, token) =>{
             if (errors){
@@ -88,7 +94,8 @@ export const logIn = (req,res)=>{
             }})
         })
     })
-})};
+})
+};
 
 //get user 
 export const getUser = (req,res) => {
