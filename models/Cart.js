@@ -20,7 +20,7 @@ const CartSchema = new schema({
         default:1
       },
       price: Number,
-      picture: {
+      image: {
           type: String,
           required: true}
     

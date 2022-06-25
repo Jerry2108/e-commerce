@@ -75,13 +75,13 @@ export const addCartItem = async (req, res)=>{
         //get the new item's name
         const name = newItem.title;
 
-        const picture = newItem.image;
-        console.log(picture);
+        const image = newItem.image;
+     
         // if card doesnt exist, create one. 
         if (!cart){
             const newCart = await Cart.create({
                 userId,
-                items:  [{ productId, name, quantity, price, picture }],
+                items:  [{ productId, name, quantity, price,image }],
                 bill: quantity*price
             })
             return res.status(201).send(newCart);
@@ -97,7 +97,7 @@ export const addCartItem = async (req, res)=>{
 
             else{
                 //add items to the items list
-                cart.items.push({productId, price, quantity, name, picture});
+                cart.items.push({productId, price, quantity, name, image});
             }
 
              //update the bill
