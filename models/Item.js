@@ -16,8 +16,13 @@ const ItemSchema = new schema({
         type:Date,
         default:Date.now
     },
-    image: String
-});
+    subject:{
+        type:String,
+        required:true
+    },
+    image: {
+        type:String,
+        required:true}})
 
 //create item model
 const Item = mongoose.model('Item', ItemSchema);

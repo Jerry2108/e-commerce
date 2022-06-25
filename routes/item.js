@@ -11,7 +11,7 @@ import multer from "multer";
 //sellers will be stored in our code.
 const storage = multer.diskStorage({
   destination: function (req, file, callback) {
-    callback(null, "./uploads");
+    callback(null, "./my-app/public/uploads");
   },
   //add back the extension. This configuration allows us to specifiy the name
   //of the file in db
